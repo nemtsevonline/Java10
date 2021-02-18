@@ -3,8 +3,7 @@ package ru.netology.domain;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
 
@@ -94,6 +93,7 @@ class RadioTest {
     @ParameterizedTest
     @CsvSource(
             value = {
+                    "100; 99",
                     "50; 49",
                     "1; 0",
                     "0; 0"
@@ -103,7 +103,6 @@ class RadioTest {
     void pressMinusVolumeTest(int start, int expected) {
         Radio radio = new Radio(100);
         radio.setCurrentVolume(start);
-
         radio.pressMinusVolume();
         assertEquals(expected, radio.getCurrentVolume());
     }
