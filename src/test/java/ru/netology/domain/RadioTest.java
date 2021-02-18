@@ -3,8 +3,7 @@ package ru.netology.domain;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
 
@@ -20,7 +19,7 @@ class RadioTest {
             , delimiter = ';'
     )
     void setCurrentStationTest(int start, int expected) {
-        Radio radio = new Radio(100);
+        Radio radio = new Radio();
         radio.setCurrentStation(start);
         assertEquals(expected, radio.getCurrentStation());
     }
@@ -35,7 +34,7 @@ class RadioTest {
             , delimiter = ';'
     )
     void setCurrentVolumeTest(int start, int expected) {
-        Radio radio = new Radio(100);
+        Radio radio = new Radio();
         radio.setCurrentVolume(start);
         assertEquals(expected, radio.getCurrentVolume());
     }
@@ -50,7 +49,7 @@ class RadioTest {
             , delimiter = ';'
     )
     void pressNextStationTest(int start, int expected) {
-        Radio radio = new Radio(100);
+        Radio radio = new Radio();
         radio.setCurrentStation(start);
 
         radio.pressNextStation();
@@ -67,7 +66,7 @@ class RadioTest {
             , delimiter = ';'
     )
     void pressPrevStationTest(int start, int expected) {
-        Radio radio = new Radio(100);
+        Radio radio = new Radio();
         radio.setCurrentStation(start);
 
         radio.pressPrevStation();
@@ -84,7 +83,7 @@ class RadioTest {
             , delimiter = ';'
     )
     void pressPlusVolumeTest(int start, int expected) {
-        Radio radio = new Radio(100);
+        Radio radio = new Radio();
         radio.setCurrentVolume(start);
 
         radio.pressPlusVolume();
@@ -101,7 +100,7 @@ class RadioTest {
             , delimiter = ';'
     )
     void pressMinusVolumeTest(int start, int expected) {
-        Radio radio = new Radio(100);
+        Radio radio = new Radio();
         radio.setCurrentVolume(start);
 
         radio.pressMinusVolume();
